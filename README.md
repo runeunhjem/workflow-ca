@@ -26,10 +26,10 @@ Tried adding baseurl: /workflow-ca to the \_config.yml and the settings.yml (bot
 Also tried baseurl: https://runeunhjem.github.io/workflow-ca
 This did not work either.
 
-Implemented Jest for unit testing.
-Implemented Cypress for end-to-end testing.
-Added ESLint and Prettier for consistent code formatting.
-Set up Husky and lint-staged to automatically run ESLint and Prettier on commits.
+- Implemented Jest for unit testing.
+- Implemented Cypress for end-to-end testing.
+- Added ESLint and Prettier for consistent code formatting.
+- Set up Husky and lint-staged to automatically run ESLint and Prettier on commits.
 
 #### Jest:
 
@@ -50,7 +50,7 @@ Do automated end-to-end tests on the following functionalities:
 - The user cannot submit the login form with invalid credentials and is shown a message.
 - The user can log out with the logout button and localStorage clears name and accessToken.
 
-#### Issues added to the issues tab:
+#### Bugs/issues added to the issues tab:
 
 1. Both Jest and Cypress logOut tests will fail due to this code in original project:
 
@@ -61,6 +61,13 @@ export const logOut = () => {
   window.location.href = `../../index.html`;
 };
 ```
+
+2. GitHub Pages 404 error when trying to access anything after login page.
+
+GitHub Pages not correctly interpreting the relative path for the window.location.replace("../../profile/index.html"); statement in your JavaScript code is likely due to differences in how GitHub Pages and Netlify handle relative paths.
+
+So without changing original code i cannot get this to work properly.
+Abi showed me a solution that kinda fixed it, but not quite, and his solution also required me to change original code, wich in this case is not allowed.
 
 ## css-frameworks-ca by Fredrik Tokle:
 
