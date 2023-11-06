@@ -6,7 +6,7 @@
     "es6": true,
     "module": true
   },
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "prettier"],
   "overrides": [
     {
       "files": ["**/*.test.js"],
