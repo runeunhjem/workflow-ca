@@ -1,11 +1,24 @@
 # Workflow CA - Friendly #
 ##### Me and Fredrik Tokle have been working on eachothers projects.
 
+His original project deployed on Netlify: https://fantastic-faun-dda1fa.netlify.app/feed/
 GitHub Pages site: https://runeunhjem.github.io/workflow-ca/
 
 [![Deploy and Build to GitHub Pages](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml/badge.svg)](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml)
 
 ### Configurations:
+Issue 1.
+We are supposed to fork the project, but that is not possible as i have fork from the css-frameworks in my own account from when we did the css-frameworks-ca.
+So I, after clearing this with Abi, have cloned the project and set new remote origin url in the new repository for it.
+Issue 2.
+The logOut function was not exported in the original project, so i have added that export to the code, after Fredrik talked to Connor about this and was told that
+it was ok to do so. This, because it was important to test the actual code, not use a mock test for this function.
+Issue 3.
+GitHub pages does not follow the relative paths that are used in the project. This gives a 404 error when trying to access anything after login page.
+Tried adding baseurl: workflow-ca/ to the _config.yml and the settings.yml (both in case one is better than the other) to see if this would give desired result, but it did not.
+Also tried baseurl: https://runeunhjem.github.io/workflow-ca
+This did not work either.
+
 Implemented Jest for unit testing.
 Implemented Cypress for end-to-end testing.
 Added ESLint and Prettier for consistent code formatting.
