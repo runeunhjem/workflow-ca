@@ -1,8 +1,8 @@
 # Workflow CA - Friendly
 
-##### Me and Fredrik Tokle have been working on each others projects.
+#### Me and Fredrik Tokle have been working on each others projects.
 
-###### His original project deployed on Netlify: https://fantastic-faun-dda1fa.netlify.app/feed/
+##### His original project deployed on Netlify: https://fantastic-faun-dda1fa.netlify.app/feed/
 
 ###### GitHub Pages site: https://runeunhjem.github.io/workflow-ca/
 
