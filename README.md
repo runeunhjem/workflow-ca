@@ -1,35 +1,58 @@
-# Workflow CA - Friendly #
-##### Me and Fredrik Tokle have been working on eachothers projects.
+# Workflow CA - Friendly
 
-His original project deployed on Netlify: [fantastic-faun-dda1fa](https://fantastic-faun-dda1fa.netlify.app/feed/)
-GitHub Pages site: [runeunhjem/workflow-ca](https://runeunhjem.github.io/workflow-ca/)
+##### Me and Fredrik Tokle have been working on each others projects.
 
-![Deploy and Build to GitHub Pages](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml/badge.svg)
+###### His original project deployed on Netlify: https://fantastic-faun-dda1fa.netlify.app/feed/
+
+###### GitHub Pages site: https://runeunhjem.github.io/workflow-ca/
+
+[![Deploy and Build to GitHub Pages](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml/badge.svg)](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml)
 
 ### Configurations:
-- **Issue 1:**
-  We were supposed to fork the project, but as I had previously forked it for the css-frameworks-ca, I cloned the project and set a new remote origin URL after Abi's approval.
 
-- **Issue 2:**
-  The `logOut` function was not exported in the original project, but I added the export after discussing it with Fredrik and Connor to test the actual code.
+##### Issue 1.
 
-- **Issue 3:**
-  GitHub Pages doesn't follow the relative paths used in the project, causing a 404 error after the login page. We tried adding `baseurl: workflow-ca/` to `_config.yml` and `settings.yml`, and also `baseurl: https://runeunhjem.github.io/workflow-ca`, but neither worked.
+We are supposed to fork the project, but that is not possible as i have fork from the css-frameworks in my own account from when we did the css-frameworks-ca.
+So I, after clearing this with Abi, have cloned the project and set new remote origin url in the new repository for it.
 
-### Implemented Enhancements:
-- Jest:
-  ![Automated Unit Testing](https://github.com/runeunhjem/workflow-ca/actions/workflows/unit-test.yml/badge.svg)
-  - Tested the login function to fetch an access token and store it in localStorage with valid credentials.
-  - Tested the logout function to clear the token from local storage.
+##### Issue 2.
 
-- Cypress:
-  ![Automated E2E Testing](https://github.com/runeunhjem/workflow-ca/actions/workflows/main.yml/badge.svg)
-  - Tested user login with valid credentials.
-  - Checked that the login form rejects invalid credentials.
-  - Verified that the logout button clears localStorage for name and accessToken.
+The logOut function was not exported in the original project, so i have added that export to the code, after Fredrik talked to Connor about this and was told that it was ok and recommended to do so here. This, because it was important to test the actual code, not use a mock test for this function.
 
-#### Issues Added to the Issues Tab:
-1. Jest and Cypress logOut tests may fail due to the code in the original project:
+##### Issue 3.
+
+GitHub pages does not follow the relative paths that are used in the project. This gives a 404 error when trying to access anything after login page.
+Tried adding baseurl: workflow-ca/ to the \_config.yml and the settings.yml (both in case one is better than the other) to see if this would give desired result, but it did not.
+Also tried baseurl: https://runeunhjem.github.io/workflow-ca
+This did not work either.
+
+Implemented Jest for unit testing.
+Implemented Cypress for end-to-end testing.
+Added ESLint and Prettier for consistent code formatting.
+Set up Husky and lint-staged to automatically run ESLint and Prettier on commits.
+
+#### Jest:
+
+[![Automated Unit Testing](https://github.com/runeunhjem/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/runeunhjem/workflow-ca/actions/workflows/unit-test.yml)
+
+Automatically test the following functionalities with unit tests:
+
+- The login function is tested to see if it fetches accesstoken and stores it in localStorage when provided with a valid email and password.
+- The logout function is tested to verify it clears the token from local storage.
+
+#### Cypress:
+
+[![Automated E2E Testing](https://github.com/runeunhjem/workflow-ca/actions/workflows/main.yml/badge.svg)](https://github.com/runeunhjem/workflow-ca/actions/workflows/main.yml)
+
+Do automated end-to-end tests on the following functionalities:
+
+- The user can log in with the login form with valid credentials.
+- The user cannot submit the login form with invalid credentials and is shown a message.
+- The user can log out with the logout button and localStorage clears name and accessToken.
+
+#### Issues added to the issues tab:
+
+1. Both Jest and Cypress logOut tests will fail due to this code in original project:
 
 ```javascript
 // js/utils/editBtn.js
@@ -37,7 +60,7 @@ export const logOut = () => {
   localStorage.removeItem("name", "token");
   window.location.href = `../../index.html`;
 };
-
+```
 
 ## css-frameworks-ca by Fredrik Tokle:
 
