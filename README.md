@@ -29,7 +29,7 @@ This did not work either.
 - Implemented Jest for unit testing.
 - Implemented Cypress for end-to-end testing.
 - Added ESLint and Prettier for consistent code formatting.
-- Set up Husky and lint-staged to automatically run ESLint and Prettier on commits.
+- Set up Husky and lint-staged in separate branch, workflow-formatting, to automatically run ESLint and Prettier on commits.
 
 #### Jest:
 
