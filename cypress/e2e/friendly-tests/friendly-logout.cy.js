@@ -1,4 +1,6 @@
-// friendly-login.cy.js
+// So since the localStorage.removeItem("name", "token"); is in one line in editBtn.js, this test will fail.
+// It will only remove "name" from localStorage and not "token".
+// This is reported as a bug in editBtn.js to issues tab on GitHub.
 
 describe("Logout", () => {
   beforeEach(() => {
