@@ -10,6 +10,19 @@
 
 ### Configurations:
 
+#### FIXES
+
+Fixed the logOut function in the original project, so that it now clears the token from local storage.
+Changed to this:
+
+```javascript
+export const logOut = () => {
+  localStorage.removeItem("name");
+  localStorage.removeItem("token");
+  window.location.href = `../../index.html`;
+};
+```
+
 ##### Issue 1.
 
 We are supposed to fork the project, but that is not possible as i have fork from the css-frameworks in my own account from when we did the css-frameworks-ca.
@@ -33,7 +46,7 @@ This did not work either.
 
 #### Jest:
 
-[![Automated Unit Testing](https://github.com/runeunhjem/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/runeunhjem/workflow-ca/actions/workflows/unit-test.yml)
+[![Automated Unit Testing](https://github.com/runeunhjem/workflow-ca/actions/workflows/unit-test.yml/badge.svg?branch=workflow-fix-logout)](https://github.com/runeunhjem/workflow-ca/actions/workflows/unit-test.yml)
 
 Automatically test the following functionalities with unit tests:
 
@@ -42,7 +55,7 @@ Automatically test the following functionalities with unit tests:
 
 #### Cypress:
 
-[![Automated E2E Testing](https://github.com/runeunhjem/workflow-ca/actions/workflows/main.yml/badge.svg)](https://github.com/runeunhjem/workflow-ca/actions/workflows/main.yml)
+[![Automated E2E Testing](https://github.com/runeunhjem/workflow-ca/actions/workflows/main.yml/badge.svg?branch=workflow-fix-logout)](https://github.com/runeunhjem/workflow-ca/actions/workflows/main.yml)
 
 Do automated end-to-end tests on the following functionalities:
 
