@@ -52,12 +52,13 @@ Do automated end-to-end tests on the following functionalities:
 
 #### Bugs/issues added to the issues tab:
 
-1. Both Jest and Cypress logOut tests will fail due to this code in original project:
+1. Both Jest and Cypress logOut tests failed due to original code in original project, so changed to this to fix:
 
 ```javascript
 // js/utils/editBtn.js
 export const logOut = () => {
-  localStorage.removeItem("name", "token");
+  localStorage.removeItem("name");
+  localStorage.removeItem("token");
   window.location.href = `../../index.html`;
 };
 ```

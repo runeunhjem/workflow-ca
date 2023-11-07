@@ -33,7 +33,12 @@ const createdEditDropDown = () => {
 const createEditBtn = () => {
   const element = createElement("div", ["dropdown"]);
 
-  const btn = createElement("button", ["btn", "text-white", "bg-primary", "border", "border-primary", "dropdown-toggle"], undefined, "Edit");
+  const btn = createElement(
+    "button",
+    ["btn", "text-white", "bg-primary", "border", "border-primary", "dropdown-toggle"],
+    undefined,
+    "Edit"
+  );
   btn.setAttribute("data-bs-toggle", "dropdown");
 
   const firstLi = createElement("li", ["dropdown-item", "text-primary"], undefined, "Log Out");
@@ -58,6 +63,7 @@ const createEditBtn = () => {
  * logOut();
  */
 export const logOut = () => {
-  localStorage.removeItem("name", "token");
+  localStorage.removeItem("name");
+  localStorage.removeItem("token");
   window.location.href = `../../index.html`;
 };
