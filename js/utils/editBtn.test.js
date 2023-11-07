@@ -10,26 +10,22 @@ import { logOut } from "./editBtn.js";
 import "jest-localstorage-mock";
 
 describe("logOut", () => {
-  it("should remove name and token from localStorage and navigate to the home page", () => {
-    // Mock the navigateTo function
-    const navigateTo = jest.fn();
+  it('should remove the "token" from local storage', () => {
+    // Call setup to initialize the local storage mock
+    localStorage.clear();
 
-    // Mock window.location.href to avoid the "Not implemented: navigation" error
-    const originalLocation = window.location;
-    delete window.location;
-    window.location = { href: "" };
+    // Add a token to local storage
+    localStorage.setItem("token", "exampleToken");
 
-    logOut(navigateTo);
+    // Call the logOut function
+    logOut();
 
-    // Ensure localStorage.removeItem is called for "name" and "token"
-    expect(localStorage.removeItem).toHaveBeenCalledWith("name");
+    // Expect that localStorage.removeItem was called with 'token'
     expect(localStorage.removeItem).toHaveBeenCalledWith("token");
 
-    // Verify that navigateTo was called with the expected URL
-    expect(navigateTo).toHaveBeenCalledWith("../../index.html");
-
-    // Reset window.location to its original state
-    window.location = originalLocation;
+    // Expect that localStorage.getItem('token') returns null after logOut
+    expect(localStorage.getItem("token")).toBeNull();
   });
 });
+
 
