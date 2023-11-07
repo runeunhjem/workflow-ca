@@ -1,6 +1,6 @@
 {
   "name": "workflow-ca",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Workflow Course Assignment",
   "type": "module",
   "scripts": {
