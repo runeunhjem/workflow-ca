@@ -27,5 +27,3 @@ describe("logOut", () => {
     expect(localStorage.getItem("token")).toBeNull();
   });
 });
-
-
