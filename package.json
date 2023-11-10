@@ -60,13 +60,15 @@
     "sass": "^1.66.0"
   },
   "lint-staged": {
-    "*.{js,css,md}": [
-      "prettier --write",
-      "eslint --fix"
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "prettier --write"
     ],
     "*.html": [
       "prettier --write"
-    ],
-    "*.scss": "prettier --write --parser scss"
+    ]
   }
 }

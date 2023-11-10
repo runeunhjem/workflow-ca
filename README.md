@@ -26,7 +26,7 @@ The logOut function was not exported in the original project, so i have added th
 ##### Issue 3.
 
 GitHub pages does not follow the relative paths that are used in the project. This gives a 404 error when trying to access anything after login page.
-Tried adding baseurl: /workflow-ca to the \_config.yml and the settings.yml (both in case one is better than the other) to see if this would give desired result, but it did not.
+Tried adding baseurl: /workflow-ca to the _config.yml and the settings.yml (both in case one is better than the other) to see if this would give desired result, but it did not.
 Also tried baseurl: https://runeunhjem.github.io/workflow-ca
 This did not work either.
 
