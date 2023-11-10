@@ -10,6 +10,10 @@
 
 ### Configurations:
 
+#### Install dependencies:
+
+npm install
+
 ##### Issue 1.
 
 We are supposed to fork the project, but that is not possible as i have fork from the css-frameworks in my own account from when we did the css-frameworks-ca.
@@ -61,6 +65,8 @@ export const logOut = () => {
   window.location.href = `../../index.html`;
 };
 ```
+
+###### Fix is in the workflow-fix-logout branch with working tests and passing badges.
 
 2. GitHub Pages 404 error when trying to access anything after login page.
 
