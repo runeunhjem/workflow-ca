@@ -8,6 +8,37 @@
 
 [![Deploy and Build to GitHub Pages](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml/badge.svg)](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml)
 
+### Requirements:
+
+Clone the project.
+
+```bash
+git clone https://github.com/runeunhjem/workflow-ca.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the tests locally:
+
+```bash
+npm run test-unit
+npm run test-e2e-cli (or npm run test-e2e to open in browser)
+```
+
+##### PS! Due to faulty code in original project, the logout tests will fail.
+
+<b> I have included a fix for this in this workflow-fix-logout branch,
+but this is not merged into workflow branch as it is not allowed to change original code. All tests pass and badges are green in this branch.</b>
+
+#### Tests locations:
+
+- Unit tests: js/entry/login.test.js and js/utils/editBtn.test.js
+- E2E tests: cypress/e2e/friendly-tests
+
 ### Configurations:
 
 #### FIXES
