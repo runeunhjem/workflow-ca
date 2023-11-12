@@ -8,11 +8,38 @@
 
 [![Deploy and Build to GitHub Pages](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml/badge.svg)](https://github.com/runeunhjem/workflow-ca/actions/workflows/deploy.yml)
 
-### Configurations:
+### Requirements:
 
-#### Install dependencies:
+Clone the project.
 
+```bash
+git clone https://github.com/runeunhjem/workflow-ca.git
+```
+
+Install dependencies:
+
+```bash
 npm install
+```
+
+Run the tests locally:
+
+```bash
+npm run test-unit
+npm run test-e2e-cli (or npm run test-e2e to open in browser)
+```
+
+##### PS! Due to faulty code in original project, the logout tests will fail.
+
+<b> I have included a fix for this in the workflow-fix-logout branch,
+but this is not merged into workflow branch as it is not allowed to change original code. All tests pass and badges are green in that branch.</b>
+
+#### Tests locations:
+
+- Unit tests: js/entry/login.test.js and js/utils/editBtn.test.js
+- E2E tests: cypress/e2e/friendly-tests
+
+### Configurations:
 
 ##### Issue 1.
 
@@ -26,7 +53,7 @@ The logOut function was not exported in the original project, so i have added th
 ##### Issue 3.
 
 GitHub pages does not follow the relative paths that are used in the project. This gives a 404 error when trying to access anything after login page.
-Tried adding baseurl: /workflow-ca to the _config.yml and the settings.yml (both in case one is better than the other) to see if this would give desired result, but it did not.
+Tried adding baseurl: /workflow-ca to the \_config.yml and the settings.yml (both in case one is better than the other) to see if this would give desired result, but it did not.
 Also tried baseurl: https://runeunhjem.github.io/workflow-ca
 This did not work either.
 
