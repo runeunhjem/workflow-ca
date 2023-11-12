@@ -3,10 +3,9 @@
     "browser": true,
     "es2021": true,
     "node": true,
-    "es6": true,
-    "module": true
+    "es6": true
   },
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "prettier"],
   "overrides": [
     {
       "files": ["**/*.test.js"],
